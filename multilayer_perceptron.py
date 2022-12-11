@@ -1,6 +1,6 @@
 # multilayer_perceptron.py: Machine learning implementation of a Multilayer Perceptron classifier from scratch.
 #
-# Submitted by: [enter your full name here] -- [enter your IU username here]
+# Submitted by: [Anurag Sangem] -- [ansangem]
 #
 # Based on skeleton code by CSCI-B 551 Fall 2022 Course Staff
 
