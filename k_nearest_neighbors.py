@@ -106,19 +106,42 @@ class KNearestNeighbors:
         #raise NotImplementedError('This function must be implemented by the student.')
         y_pred=[]
         for x in X:
-            distance_list=[] #we reinitialise this for every row in test set
-            neighbors=[]
-            for train_data_row in self._X:
-                distance_list.append(self._distance(x,train_data_row))
-            sorted_distances_index=np.argsort(distance_list)[:self.n_neighbors] #this returns the index of the neighbors in the train set
-            
-            #we take the labels of the nearest neighbors in the train set to take a majority vote
-            for i in sorted_distances_index:
-                neighbors.append(self._y[i])
+            if (self.weights=='uniform'):
+                distance_list=[] #we reinitialise this for every row in test set
+                neighbors=[]
+                for train_data_row in self._X:
+                    distance_list.append(self._distance(x,train_data_row))
+                sorted_distances_index=np.argsort(distance_list)[:self.n_neighbors] #this returns the index of the neighbors in the train set
+                
+                #we take the labels of the nearest neighbors in the train set to take a majority vote
+                for i in sorted_distances_index:
+                    neighbors.append(self._y[i])
 
-            pred_value_for_row_test=max([(neighbors.count(p_class),p_class) for p_class in set(neighbors)])[1]
-            #pred_value_for_row_test = Counter(neighbors).most_common(1)
-            y_pred.append(pred_value_for_row_test)
+                pred_value_for_row_test=max([(neighbors.count(p_class),p_class) for p_class in set(neighbors)])[1]
+                #pred_value_for_row_test = Counter(neighbors).most_common(1)
+                y_pred.append(pred_value_for_row_test)
+
+
+            elif(self.weights=='distance'):
+                distance_list=[] #we reinitialise this for every row in test set
+                neighbors=[]
+                neibh_dict={}
+                for train_data_row in self._X:
+                    distance_list.append(self._distance(x,train_data_row))
+                sorted_distances_index=np.argsort(distance_list)[:self.n_neighbors] #this returns the index of the neighbors in the train set
+
+                #we take the labels of the nearest neighbors in the train set to take a majority vote
+                for i in sorted_distances_index:
+                    neighbors.append(self._y[i])
+
+                for j in sorted_distances_index:
+                        neibh_dict[self._y[j]]=1/0.000000001+distance_list[j] #this stores the nearest neibhors and their inverse distance from the test set record
+
+
+                pred_value_for_row_test=max([(neighbors.count(p_class),p_class) for p_class in set(neighbors)])[1]
+                #pred_value_for_row_test = Counter(neighbors).most_common(1)
+                y_pred.append(pred_value_for_row_test)
+
 
         #y_pred = [self._predict(x) for x in X]
         return np.array(y_pred)
