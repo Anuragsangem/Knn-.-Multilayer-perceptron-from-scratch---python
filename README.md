@@ -33,7 +33,7 @@ a)Abstractions :
 2)_h_bias - Bias of the hidden layer
 3)_o_weights - Weights of the output layer
 4)_o_bias - Bias of the output layer
-5)The remaining absatractions 
+5)The remaining absatractions arem given in comments
 
 b)Ideology : 
 A multilayer perceptron (MLP) is a type of feedforward artificial neural network. 
