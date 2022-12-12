@@ -27,12 +27,14 @@ It is different from the Euclidean distance, which is the straight-line distance
 
 Q2)
 
-Report:
+#Report:
 a)Abstractions : 
 1)_h_weights - Weights of the hidden layer ->I Initialized the hidden weights 
 2)_h_bias - Bias of the hidden layer
 3)_o_weights - Weights of the output layer
 4)_o_bias - Bias of the output layer
+5)The remaining absatractions 
+
 b)Ideology : 
 A multilayer perceptron (MLP) is a type of feedforward artificial neural network. 
 It consists of an input layer, one or more hidden layers, and an output layer. 
@@ -42,6 +44,7 @@ Activation Function : Each layer is passed through a activation function which p
 the activation function is a key component of a neuron. It takes in the weighted sum of all the inputs to the neuron, 
 along with a bias term, and produces an output. 
 We Defined activation functions like sigmoid , tanh , identity , ReLu etc in utiils.py file.
+
 c)Work Flow:
 1)We Initialize weights , bias.
 2)Fit :In the fit method we run each row of the train set and pass it through hidden layer , output layer , we calculate the error of the actual y value 
