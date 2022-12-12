@@ -18,6 +18,7 @@ For example, in a binary classification task, KNN might predict that a new data 
 if the majority of the K nearest neighbors belong to the "positive" class.
 b)Knn algorithm is also called as Lazy learner because there is no training that happens in the algorithm , it just calculates the distance 
 of a test set point to all the train set data points during the testing.
+c)if the weight metric is given as distance instead of taking the max count of neighbors we take the inverse proportion of the distances and retrun the higerst sum output
 
 
 Metrics : 
