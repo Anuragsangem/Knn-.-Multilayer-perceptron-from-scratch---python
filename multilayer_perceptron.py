@@ -38,6 +38,11 @@ and the predicted y value.
 
 
 """
+# multilayer_perceptron.py: Machine learning implementation of a Multilayer Perceptron classifier from scratch.
+#
+# Submitted by: [Anurag Sangem] -- [ansangem]
+#
+# Based on skeleton code by CSCI-B 551 Fall 2022 Course Staff
 
 import numpy as np
 import math
@@ -187,12 +192,17 @@ class MultilayerPerceptron:
             d_weights_hidden = (1 / self._X.shape[0]) * np.dot(self._X.T, d_hidden)
             d_bias_hidden = (1 / self._X.shape[0]) * np.sum(d_hidden, axis=0, keepdims=True)
 
+            if(iter==1 or iter%20==0):
+                self._loss_history.append(cross_entropy(self._y,Output_actication)) #appending cross entropy for every 20 iterations
+
             #update the weights and proceed to another iteration
 
             self._h_weights = self._h_weights - self.learning_rate * d_weights_hidden
             self._o_weights = self._o_weights - self.learning_rate * d_weights_op
             self._h_bias = self._h_bias - self.learning_rate * d_bias_hidden
             self._o_bias = self._o_bias - self.learning_rate * d_bias_op
+
+
    
 
     def predict(self, X):
