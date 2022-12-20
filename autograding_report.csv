@@ -1,0 +1,22 @@
+Euclidean Distance Points,5.0
+Manhattan Distance Points,5.0
+Identity Activation Points,2.5
+Sigmoid Activation Points,2.5
+Tanh Activation Points,2.5
+ReLU Activation Points,2.5
+Cross Entropy Loss Points,10.0
+One-Hot Encoding Points,10.0
+K-Nearest Neighbors Points,5.0
+KNN Accuracy Score 1,33.2
+KNN Accuracy Score 1 Points,0.0
+KNN Accuracy Score 2,24.4
+KNN Accuracy Score 2 Points,0.0
+Multilayer Perceptron Points,5.0
+MLP Accuracy Score 1,16.8
+MLP Accuracy Score 1 Points,0.0
+MLP Accuracy Score 2,5.8
+MLP Accuracy Score 2 Points,0.0
+MLP Accuracy Score 3,6.3
+MLP Accuracy Score 3 Points,0.0
+MLP Accuracy Score 4,37.8
+MLP Accuracy Score 4 Points,0.0
